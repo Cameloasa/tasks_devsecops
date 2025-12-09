@@ -8,3 +8,6 @@ black==24.3.0  # Code formatter
 isort==5.12.0  # Import sorter
 flake8==7.0.0  # Linter
 playwright==1.56.0 # For end-to-end browser testing
+SQLAlchemy==2.0.23  # ORM for database interactions
+passlib[bcrypt]==1.7.4  # Password hashing
+python-jose==3.3.0       # JWT handling

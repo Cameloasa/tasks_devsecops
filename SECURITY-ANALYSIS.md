@@ -1,6 +1,7 @@
 # Security Analysis – tasks_devsecops
 
 ## 1. Introduction
+
 This document contains the security analysis for the **tasks_devsecops** application, including the identification of main threats, corresponding security requirements, and how to test them.
 
 ---
@@ -33,6 +34,7 @@ This document contains the security analysis for the **tasks_devsecops** applica
 ---
 
 ## 4. Notes
+
 - Critical requirements must be implemented before pushing to the `main` branch.  
 - All requirements must be covered by automated tests integrated into the CI/CD pipeline.  
 - Any change affecting security must be documented here and tested.
