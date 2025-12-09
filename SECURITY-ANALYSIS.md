@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-This document contains the security analysis for the **tasks_devsecops** application, including the identification of main threats, corresponding security requirements, and how to test them.
+This document contains the security analysis for the **tasks_devsecops** application. It is a FastAPI-based task management system where admins create and assign tasks to users, and users view their assigned tasks. This analysis identifies main threats, corresponding security requirements, and testing strategies.
 
 ---
 
@@ -10,12 +10,13 @@ This document contains the security analysis for the **tasks_devsecops** applica
 
 | ID | Threat | Description |
 |----|--------|------------|
-| T1 | Injection attacks | Possible attacks via malicious input (JSON/Command). |
-| T2 | Cross-Site Scripting (XSS) | Malicious code injected into responses displayed in the frontend. |
-| T3 | Broken Authentication | Improper authentication, allowing unauthorized access. |
-| T4 | Sensitive Data Exposure | Exposure of sensitive data in responses or logs. |
-| T5 | Broken Access Control | Access to restricted actions without proper permissions. |
-| T6 | Security Misconfiguration | Misconfigured server or application settings. |
+| T1 | Injection attacks | Possible attacks via malicious input (JSON, SQL if using DB). |
+| T2 | Cross-Site Scripting (XSS) | Malicious code injected into task content or responses. |
+| T3 | Broken Authentication | Improper or missing authentication allowing unauthorized access. |
+| T4 | Sensitive Data Exposure | Exposure of user emails, internal notes, or other sensitive fields in API responses. |
+| T5 | Broken Access Control | Users accessing tasks not assigned to them, or non-admins creating/deleting tasks. |
+| T6 | Security Misconfiguration | Misconfigured CORS, missing security headers, or insecure error handling. |
+| T7 | Information Leakage | Stack traces or internal system details exposed in error responses. |
 
 ---
 
